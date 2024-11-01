@@ -3,9 +3,10 @@ import { Menu, Github } from 'lucide-react';
 
 const Website = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
+
       {/* Header */}
       <header className="w-full border-b">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -24,9 +25,10 @@ const Website = () => {
         <p className="text-xl md:text-2xl mb-12 max-w-3xl">
           Exploring the intersection of blockchain, web3, and technology
         </p>
-        
+
+        {/* Icons */}
         <div className="flex justify-center space-x-8">
-          <a 
+          <a
             href="https://github.com/blockzealot"
             target="_blank"
             rel="noopener noreferrer"
@@ -34,7 +36,7 @@ const Website = () => {
           >
             <Github size={32} />
           </a>
-          <a 
+          <a
             href="https://x.com/blockzealous"
             target="_blank"
             rel="noopener noreferrer"
@@ -49,9 +51,10 @@ const Website = () => {
 
       {/* Footer */}
       <footer className="text-center py-8">
-        <div className="mb-2">BlockZealous</div>
+        <div className="mb-2 font-bold text-lg">BlockZealous</div>
         <div>© 2024 BlockZealous. All rights reserved.</div>
       </footer>
+
     </div>
   );
 };
