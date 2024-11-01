@@ -1,25 +1,27 @@
 // src/Website.jsx
 import React, { useState } from 'react';
-import { Menu, Github } from 'lucide-react';
+import { Menu, X, Github } from 'lucide-react';
 
 const Website = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-between">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-between relative">
 
       {/* Header */}
-      <header className="w-full border-b">
+      <header className="w-full border-b fixed top-0 left-0 right-0 bg-white z-10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-3xl font-black">BlockZealous</h1>
-          <button className="text-2xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <Menu size={28} />
+          <h1 className="text-3xl font-black text-left">BlockZealous</h1>
+          <button className="text-2xl" onClick={toggleMenu}>
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </header>
 
       {/* Main Content - Centered */}
-      <main className="flex-grow flex flex-col items-center justify-center px-6 text-center">
+      <main className="flex-grow flex flex-col items-center justify-center px-6 text-center mt-20">
         <h1 className="text-6xl md:text-7xl font-extrabold mb-4 text-black">
           Welcome to BlockZealous
         </h1>
@@ -56,6 +58,17 @@ const Website = () => {
         <div className="text-sm text-gray-600">© 2024 BlockZealous. All rights reserved.</div>
       </footer>
 
+      {/* Overlay Menu */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
+          <div className="bg-white p-6 rounded-md text-center space-y-4">
+            <a href="#" className="text-2xl text-black block">Home</a>
+            <a href="#" className="text-2xl text-black block">About</a>
+            <a href="#" className="text-2xl text-black block">Contact</a>
+            <button onClick={toggleMenu} className="text-xl text-gray-600 mt-4">Close Menu</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
