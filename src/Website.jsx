@@ -20,10 +20,10 @@ const Website = () => {
 
       {/* Main Content - Centered */}
       <main className="flex-grow flex flex-col items-center justify-center px-6 text-center">
-        <h1 className="text-6xl md:text-7xl font-extrabold mb-6 text-black">
+        <h1 className="text-6xl md:text-7xl font-extrabold mb-4 text-black">
           Welcome to BlockZealous
         </h1>
-        <p className="text-xl md:text-2xl mb-12 max-w-3xl text-gray-600">
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl text-gray-600">
           Exploring the intersection of blockchain, web3, and technology
         </p>
 
@@ -52,7 +52,7 @@ const Website = () => {
 
       {/* Footer */}
       <footer className="text-center py-8">
-        <div className="mb-2 text-lg font-bold">BlockZealous</div>
+        <div className="mb-2 text-lg font-bold text-black">BlockZealous</div>
         <div className="text-sm text-gray-600">© 2024 BlockZealous. All rights reserved.</div>
       </footer>
 
